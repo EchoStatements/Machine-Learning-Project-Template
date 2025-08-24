@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "0.1.0"
+description = "{{ cookiecutter.project_description }}"
+authors = [
+    {name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}"}
+]
+readme = "README.md"
+requires-python = ">={{ cookiecutter.python_version }}"
+license = {text = "{{ cookiecutter.open_source_license }}"}
+dependencies = [
+    "numpy",
+    "torch",
+    "scikit-learn",
+    "transformers",
+    "torchvision",
+    "matplotlib",
+    "jupyter",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+]
+
+[tool.ruff]
+# Enable flake8-bugbear (`B`) rules.
+select = ["E", "F", "B", "I", "C90"]
+ignore = []
+
+line-length = 100
+indent-width = 4
+
+# Assume Python 3.12
+target-version = "py312"
+
+# Allow imports relative to the "src" and "app" directories.
+src = ["src"]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "venv",
+    "env",
+    "build",
+    "dist",
+]
+
+[tool.ruff.mccabe]
+# Flag functions with a complexity higher than 10.
+max-complexity = 10
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
