@@ -1,17 +1,21 @@
 # Machine Learning Project Template
 
-A cookie-cutter template for machine learning projects with PyTorch, scikit-learn, and transformers.
+A cookie-cutter template for machine learning projects with PyTorch, scikit-learn
+and transformers.
 
 
-To get started:
+Getting started in a single line:
 ```bash
-cookiecutter https://github.com/yourusername/uv-machine-learning-template
+cookiecutter https://github.com/EchoStatements/Machine-Learning-Project-Template
 ```
 
 ## What is this?
 
 The repo is a cookie cutter for quickly generating the environment and config for
 a quick and lightweight repository to rapidly test ideas using standard ML libraries.
+
+This template is primarily designed for my own personal use, though I'm happy to take
+contributions from others if they find it useful and have ideas for improvements.
 
 ## Usage
 
@@ -23,7 +27,7 @@ a quick and lightweight repository to rapidly test ideas using standard ML libra
 ### Creating a New Project
 
 ```bash
-cookiecutter https://github.com/yourusername/uv-machine-learning-template
+cookiecutter https://github.com/EchoStatements/Machine-Learning-Project-Template
 ```
 
 You'll be prompted to provide information about your project:
@@ -35,7 +39,6 @@ You'll be prompted to provide information about your project:
 - `author_email`: Your email
 - `python_version`: Minimum Python version required (default: 3.12)
 - `open_source_license`: License for your project (MIT, BSD-3-Clause, or no license)
-- `include_jupyter_support`: Whether to include Jupyter notebook support
 
 ### Project Structure
 
@@ -46,15 +49,12 @@ your_project/
 ├── data/               # Data files
 ├── models/             # Saved models
 ├── notebooks/          # Jupyter notebooks
+│   └── ml_example.ipynb # Example notebook
 ├── src/                # Source code
 │   └── your_project/
 │       ├── __init__.py
-│       ├── data.py     # Data loading and processing
-│       ├── model.py    # Model definitions
-│       └── train.py    # Training utilities
-├── examples/           # Example scripts
+│       └── ml_example.py # Example ML script
 ├── tests/              # Unit tests
-├── .pre-commit-config.yaml
 ├── pyproject.toml
 └── README.md
 ```
@@ -82,17 +82,8 @@ After creating your project:
 
 4. Run the example script:
    ```bash
-   python examples/ml_example.py
+   python src/your_project/ml_example.py
    ```
-
-## Customization
-
-The template provides a solid foundation for machine learning projects, but you can customize it to fit your specific needs:
-
-- Add or remove dependencies in `pyproject.toml`
-- Modify the model architecture in `src/your_project/model.py`
-- Customize data loading in `src/your_project/data.py`
-- Add new modules for specific functionality
 
 ## License
 

@@ -9,15 +9,12 @@
 ├── data/               # Data files
 ├── models/             # Saved models
 ├── notebooks/          # Jupyter notebooks
+│   └── ml_example.ipynb # Example notebook
 ├── src/                # Source code
 │   └── {{ cookiecutter.project_slug }}/
 │       ├── __init__.py
-│       ├── data.py     # Data utilities
-│       ├── model.py    # Model utilities
-│       └── train.py    # Visualization utilities
-├── examples/           # Example scripts
+│       └── ml_example.py # Example ML script
 ├── tests/              # Unit tests
-├── .pre-commit-config.yaml
 ├── pyproject.toml
 └── README.md
 ```
@@ -68,7 +65,6 @@ initialised correctly. This script can be run using the command
 python src/{{ cookiecutter.project_slug }}/ml_example.py
 ```
 
-{% if cookiecutter.include_jupyter_support == "y" %}
 ### Jupyter Notebooks
 
 The `notebooks` directory contains Jupyter notebooks for interactive development and visualization:
@@ -76,7 +72,6 @@ The `notebooks` directory contains Jupyter notebooks for interactive development
 ```bash
 jupyter notebook notebooks/
 ```
-{% endif %}
 
 ## Development
 
