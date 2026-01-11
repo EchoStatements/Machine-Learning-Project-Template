@@ -10,7 +10,7 @@ authors = [
     {name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}"}
 ]
 readme = "README.md"
-requires-python = ">={{ cookiecutter.python_version }}"
+requires-python = "=={{ cookiecutter.python_version }}"
 license = {text = "{{ cookiecutter.open_source_license }}"}
 dependencies = [
     "numpy",
@@ -20,6 +20,9 @@ dependencies = [
     "torchvision",
     "matplotlib",
     "jupyter",
+    "protobuf",
+    "sentencepiece",
+    "accelerate"
 ]
 
 [project.optional-dependencies]
@@ -29,6 +32,9 @@ dev = [
     "pytest",
     "pytest-cov",
 ]
+
+[tool.setuptools.packages.find]
+include = ["{{ cookiecutter.project_slug }}*"]
 
 [tool.ruff]
 # Enable flake8-bugbear (`B`) rules.
@@ -41,8 +47,8 @@ indent-width = 4
 # Assume Python 3.12
 target-version = "py312"
 
-# Allow imports relative to the "src" and "app" directories.
-src = ["src"]
+# Allow imports relative to the package directory.
+src = ["{{ cookiecutter.project_slug }}"]
 
 # Exclude a variety of commonly ignored directories.
 exclude = [

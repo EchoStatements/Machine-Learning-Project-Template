@@ -2,7 +2,7 @@
 
 import torch
 import pytest
-from src.model import SimpleNN
+from {{cookiecutter.project_slug}}.model import SimpleNN
 
 
 def test_simple_nn_forward():

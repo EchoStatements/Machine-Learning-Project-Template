@@ -6,14 +6,13 @@
 
 ```
 {{ cookiecutter.project_slug }}/
+├── {{ cookiecutter.project_slug }}/  # Source code
+│   ├── __init__.py
+│   └── ml_example.py   # Example ML script
 ├── data/               # Data files
 ├── models/             # Saved models
 ├── notebooks/          # Jupyter notebooks
 │   └── ml_example.ipynb # Example notebook
-├── src/                # Source code
-│   └── {{ cookiecutter.project_slug }}/
-│       ├── __init__.py
-│       └── ml_example.py # Example ML script
 ├── tests/              # Unit tests
 ├── pyproject.toml
 └── README.md
@@ -57,12 +56,12 @@ pre-commit install
 
 ### Running Examples
 
-The `src/{{ cookiecutter.project_slug }}` directory contains a script using some 
-of the default libraries that can be used to test that the project has been 
+The `{{ cookiecutter.project_slug }}` directory contains a script using some
+of the default libraries that can be used to test that the project has been
 initialised correctly. This script can be run using the command
 
 ```bash
-python src/{{ cookiecutter.project_slug }}/ml_example.py
+python {{ cookiecutter.project_slug }}/ml_example.py
 ```
 
 ### Jupyter Notebooks
