@@ -10,7 +10,7 @@ authors = [
     {name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}"}
 ]
 readme = "README.md"
-requires-python = "=={{ cookiecutter.python_version }}"
+requires-python = "=={{ cookiecutter.python_version }}.*"
 license = {text = "{{ cookiecutter.open_source_license }}"}
 dependencies = [
     "numpy",
